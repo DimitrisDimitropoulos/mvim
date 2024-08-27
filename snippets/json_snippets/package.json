@@ -1,0 +1,27 @@
+{
+  "name": "Snippets",
+  "license": "GPL-3.0-or-later",
+  "version": "0.3",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "tex"
+        ],
+        "path": "./tex.json"
+      },
+      {
+        "language": [
+          "lua"
+        ],
+        "path": "./lua.json"
+      },
+      {
+        "language": [
+          "cpp"
+        ],
+        "path": "./cpp.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "for each": {
+    "prefix": "foreach",
+    "body": [
+      "\nfor each (${1:auto} ${2:var} in ${3:collection_to_loop})",
+      "{",
+      "\t${4:/*Code*/}",
+      "}\n"
+    ],
+    "description": "foreach"
+  },
+  "if": {
+    "prefix": "if",
+    "body": [
+      "\nif (${1:/*Condition*/})",
+      "{",
+      "\t${2:/*Code*/}",
+      "}\n"
+    ],
+    "description": "if"
+  },
+  "vec": {
+    "prefix": "vec",
+    "body": [
+      "std::vector<${1:type}> ${2:vec}\n"
+    ],
+    "description": "vector"
+  },
+  "cout": {
+    "prefix": "cout",
+    "body": [
+      "\nstd::cout << \"${1:/*Text*/}\" << \"\\n\";\n"
+    ],
+    "description": "cout"
+  },
+  "lambda": {
+    "prefix": "lambda",
+    "body": [
+      "[](${1:/*Args*/}){${2:/*Code*/}};\n"
+    ],
+    "description": "lambda"
+  },
+  "trail": {
+    "prefix": "trail",
+    "body": [
+      "auto ${1:/*Name*/}(${2:/*Args*/}) -> ${3:/*Return Type*/};"
+    ],
+    "description": "trail function"
+  },
+  "Print Matrix": {
+    "prefix": "mtrx",
+    "body": [
+      "for (const auto &row : ${1:matrix}) {",
+      "\tfor (const auto &elem : row) {",
+      "\t\tstd::cout << std::format(\"{:0${2:width}.${3:precission}f}\\t\", elem);",
+      "\t}",
+      "\tstd::cout << \"\\n\";",
+      "}",
+      "std::cout << \"\\n\";",
+      "$0"
+    ],
+    "description": "Print a matrix with formatted output"
+  }
+}

@@ -1,0 +1,417 @@
+{
+  "BibLaTex-Setup": {
+    "prefix": "biblatex-setup",
+    "body": [
+      "\\usepackage[backend=biber,language=auto,autolang=other,style=ieee,sorting=nyt,defernumbers=true,doi=false]{biblatex}",
+      "\\addbibresource{${2:file}}\n$0"
+    ],
+    "description": "BibLaTeX setup"
+  },
+  "Code": {
+    "prefix": "code",
+    "body": [
+      "\\usepackage{listings}",
+      "\\usepackage{verbatim}",
+      "\\usepackage{algpseudocode}",
+      "\\lstset{",
+      "\tlanguage= ${1|Matlab,C++,C,Python,Julia|},",
+      "\tbasicstyle=\\ttfamily,",
+      "\tkeywordstyle=\\color{blue},",
+      "\tcommentstyle=\\color{green!50!black},",
+      "\tstringstyle=\\color{red},",
+      "\tshowstringspaces=false,",
+      "\tfirstnumber=1,",
+      "\tnumbers=left,",
+      "\tstepnumber=1,",
+      "\tbreaklines=true,",
+      "}\n$0"
+    ],
+    "description": "LaTeX code setup"
+  },
+  "Inkscape": {
+    "prefix": "inkscape",
+    "body": [
+      "\\usepackage{import}",
+      "\\usepackage{xifthen}",
+      "\\usepackage{pdfpages}",
+      "\\usepackage{transparent}",
+      "\\usepackage{svg}",
+      "\\newcommand{\\incfig}[1]{%",
+      "\t\\def\\svgwidth{0.5\\textwidth}",
+      "\t\\import{./figures/}{#1.pdf_tex}",
+      "}",
+      "\\newcommand{\\incFig}[1]{%",
+      "\t\\def\\svgwidth{0.5\\textwidth}",
+      "\t\\import{./figures/}{#1}",
+      "}\n$0"
+    ],
+    "description": "LaTeX Inkscape"
+  },
+  "hyperref": {
+    "prefix": "hyperref",
+    "body": [
+      "\\usepackage{hyperref}",
+      "\\hypersetup{",
+      "\t colorlinks=true,",
+      "\t linktoc=all,",
+      "\t citecolor=black,",
+      "\t filecolor=black,",
+      "\t linkcolor=black,",
+      "\t urlcolor=black",
+      "}",
+      "\\hypersetup{linktocpage}\n$0"
+    ],
+    "description": "LaTeX hyperref-setup"
+  },
+  "LaTeX-tikz-setup": {
+    "prefix": "tikz-setup",
+    "body": [
+      "\\usepackage{tikz}",
+      "\\usepackage{pgfplots}",
+      "\\pgfplotsset{compat=1.18}\n$0"
+    ],
+    "description": "LaTeX tikz setup"
+  },
+  "environment": {
+    "prefix": "envu",
+    "body": [
+      "\\begin{${1:environment}}",
+      "\t$2",
+      "\\end{${1:environment}}\n$0"
+    ],
+    "description": "LaTeX environment"
+  },
+  "LaTeX-tikz": {
+    "prefix": "tikzu",
+    "body": [
+      "\\begin{figure}[ht]",
+      "\t\\centering",
+      "\t\\begin{tikzpicture}",
+      "\t\t$1",
+      "\t\\end{tikzpicture}",
+      "\t\\caption{${2:λεζάντα}}\\label{fig:${3:label}}",
+      "\\end{figure}\n$0"
+    ],
+    "description": "LaTeX tikz"
+  },
+  "LaTeX-Table": {
+    "prefix": "tabu",
+    "body": [
+      "",
+      "\\begin{table}[ht]",
+      "\t\\centering",
+      "\t\\caption{${2:λεζάντα}}\\label{tab:${1:label}}",
+      "\t\\begin{tabular}[H]{ccc}",
+      "\t\t\\\\toprule",
+      "\t\t$3 & &",
+      "\t\t\\\\\\\\  \\midrule \\midrule",
+      "\t\t&  & ",
+      "\t\t\\\\\\\\ \\midrule",
+      "\t\t&  & ",
+      "\t\t\\\\\\\\ \\bottomrule",
+      "\t\t\\end{tabular}",
+      "\\end{table}\n$0",
+      ""
+    ],
+    "description": "LaTeX table"
+  },
+  "LaTeX-Tabularx": {
+    "prefix": "tabux",
+    "body": [
+      "\\begin{table}[ht]",
+      "\t\\centering",
+      "\t\\caption{${2:λεζάντα}}\\label{tab:${1:label}}",
+      "\t\\begin{tabularx}{\\textwidth}{XXX}",
+      "\t\t\\toprule",
+      "\t\t$4 & &",
+      "\t\t\\\\\\\\  \\midrule \\midrule",
+      "\t\t&  & ",
+      "\t\t\\\\\\\\ \\midrule",
+      "\t\t&  & ",
+      "\t\t\\\\\\\\ \\bottomrule",
+      "\t\\end{tabularx}",
+      "\\end{table}\n$0"
+    ],
+    "description": "LaTeX tabularx"
+  },
+  "LaTeX-Figure": {
+    "prefix": [
+      "figu",
+      "diagu"
+    ],
+    "body": [
+      "\\begin{figure}[ht]",
+      "\t\\centering",
+      "\t\\includegraphics[width = \\textwidth]{${2:file name of the figure}}",
+      "\t\\caption{${3:λεζάντα της εικόνας}}\\label{fig:${1:label of the figure}}",
+      "\\end{figure}\n$0"
+    ],
+    "description": "LaTeX figure"
+  },
+  "BibTeX": {
+    "prefix": "bib-biblio",
+    "body": [
+      "\\newpage",
+      "\\section{Βιβλιογρφία}",
+      "\\bibliography{${1:file}}",
+      "\\bibliographystyle{${2:style_eg_acm}}\n$0"
+    ],
+    "description": "BibTeX bibliography"
+  },
+  "BibLaTeX": {
+    "prefix": "bibu",
+    "body": [
+      "\\newpage",
+      "\\section{Βιβλιογρφία}",
+      "\\nocite{*}",
+      "\\printbibliography[heading=none]\n$0"
+    ],
+    "description": "BibLaTeX bibliography"
+  },
+  "code-listing": {
+    "prefix": "listu",
+    "body": [
+      "\\newpage",
+      "\\par\\noindent\\rule{\\textwidth}{0.4pt}",
+      "\\lstinputlisting[language=${1|Matlab,C++,C,Python,Julia|}, caption=${2:Λεζάντα}]{${3:file}}",
+      "\\par\\noindent\\rule{\\textwidth}{0.4pt}\n$0"
+    ],
+    "description": "LaTeX code listing"
+  },
+  "contents": {
+    "prefix": "contents",
+    "body": [
+      "\\newpage",
+      "\\section{Περιεχόμενα}",
+      "\\tableofcontents\n$0"
+    ],
+    "description": "LaTeX contents"
+  },
+  "LaTeX-itemize": {
+    "prefix": [
+      "itemu"
+    ],
+    "body": [
+      "\\begin{itemize}",
+      "\t\\item ${1:text}",
+      "\\end{itemize}\n$0"
+    ],
+    "description": "LaTeX itemize"
+  },
+  "Enumerate": {
+    "prefix": "enum",
+    "body": [
+      "\\\\begin{enumerate}",
+      "\t\\item $0",
+      "\\\\end{enumerate}"
+    ],
+    "description": "LaTeX enumerate"
+  },
+  "Description": {
+    "prefix": "description",
+    "body": [
+      "\\\\begin{description}",
+      "\t\\item[$1] $0",
+      "\\\\end{description}"
+    ],
+    "description": "LaTeX description"
+  },
+  "LaTeX-equation": {
+    "prefix": "eq",
+    "body": [
+      "\\begin{equation}\\label{eq:$1}",
+      "\t$2",
+      "\\end{equation}\n",
+      "$0"
+    ],
+    "description": "LaTeX equation"
+  },
+  "cases": {
+    "prefix": "cases",
+    "body": [
+      "\\begin{cases}",
+      "\t$1 & $2 \\\\\\\\",
+      "\t$3 & $4 \\\\\\\\",
+      "\\end{cases}\n$0"
+    ],
+    "description": "LaTeX cases"
+  },
+  "matrix": {
+    "prefix": "matrix",
+    "body": [
+      "\\begin{${1|matrix,pmatrix,bmatrix,Bmatrix,Vmatrix,vmatrix|}}",
+      "\t$2 & $3\\\\\\\\",
+      "\t$4 & $5\\\\\\\\",
+      "\\end{$1}\n$0"
+    ],
+    "description": "LaTeX matrix"
+  },
+  "array-LaTeX": {
+    "prefix": "array",
+    "body": [
+      "\\begin{array}{${1:c}}",
+      "\t$2\\\\\\\\",
+      "\t$3\\\\\\\\$4",
+      "\\end{array}\n$0"
+    ],
+    "description": "LaTeX array"
+  },
+  "one over": {
+    "prefix": "over",
+    "body": "\\frac{1}{${1:fraction}}$0",
+    "description": "special fraction"
+  },
+  "fraction": {
+    "prefix": [
+      "fr"
+    ],
+    "body": "\\frac{${1:top}}{${2:bottom}}$0",
+    "description": "fraction-snippet"
+  },
+  "integral": {
+    "prefix": "int",
+    "body": "\\int_{${1:lower}}^{${2:upper}} ${4:math} d${3:variable} $0",
+    "description": "LaTeX integral"
+  },
+  "derivative": {
+    "prefix": "deriv",
+    "body": [
+      "\\frac{d${1:f}}{d${2:x}} $0"
+    ],
+    "description": "LaTeX derivative"
+  },
+  "Summation-Series": {
+    "prefix": "series",
+    "body": [
+      "\\sum_{${1:n}=${2:0}}^{${3:\\infty}} $0"
+    ],
+    "description": "LaTeX summation-series"
+  },
+  "Inline Summation": {
+    "prefix": "suminline",
+    "body": [
+      "\\sum_{$1}^{$2}$3 $0"
+    ],
+    "description": "LaTeX inline summation notation."
+  },
+  "parentheses": {
+    "prefix": [
+      "parentheses",
+      "parenth"
+    ],
+    "body": "\\left($0\\right)",
+    "description": "LaTeX parentheses"
+  },
+  "square_bracket": {
+    "prefix": [
+      "bracku",
+      "square_bracket"
+    ],
+    "body": "\\left[$0\\right]",
+    "description": "LaTeX square bracket"
+  },
+  "tikz-data": {
+    "prefix": [
+      "tizk_datu"
+    ],
+    "body": "\\addplot table [x =${2:collumn_name}, y =${3:collumn_name}, col sep=comma] {${1:file}};\n$0",
+    "description": "tikz plot data from csv"
+  },
+  "siunits-declare": {
+    "prefix": "sideclaru",
+    "body": "\\DeclareSIUnit\\{${1:unit_call}}{${2:unit_show}}$0",
+    "description": "siunitx declare unit"
+  },
+  "squareroot": {
+    "prefix": "sqrt",
+    "body": "\\sqrt{$1}$0",
+    "description": "LaTeX square root"
+  },
+  "cos": {
+    "prefix": "cos",
+    "body": "\\cos($1)$0",
+    "description": "LaTeX cosine"
+  },
+  "sin": {
+    "prefix": "sin",
+    "body": "\\sin($1)$0",
+    "description": "LaTeX sine"
+  },
+  "tan": {
+    "prefix": "tan",
+    "body": "\\tan($1)$0",
+    "description": "LaTeX tangent"
+  },
+  "log": {
+    "prefix": "log",
+    "body": "\\log($1)$0",
+    "description": "LaTeX logarithm"
+  },
+  "ln": {
+    "prefix": "ln",
+    "body": "\\ln ($1)$0",
+    "description": "LaTeX natural logarithm"
+  },
+  "vector": {
+    "prefix": "vec",
+    "body": "\\vec{$1}$0",
+    "description": "LaTeX vector"
+  },
+  "over_dot": {
+    "prefix": "dot",
+    "body": "\\dot{${1:math}}$0",
+    "description": "LaTeX dot"
+  },
+  "over_ddot": {
+    "prefix": "ddot",
+    "body": "\\ddot{${1:math}}$0",
+    "description": "LaTeX ddot"
+  },
+  "underline": {
+    "prefix": "underline",
+    "body": [
+      "\\underline{$1}$0"
+    ],
+    "description": "LaTeX underline"
+  },
+  "newpage": {
+    "prefix": "np",
+    "body": "\\newpage\n$0",
+    "description": "LaTeX newpage"
+  },
+  "after-underline": {
+    "prefix": [
+      "aund"
+    ],
+    "body": [
+      "\\underline{${CLIPBOARD: $1}}$0"
+    ],
+    "description": "underline"
+  },
+  "cdot": {
+    "prefix": "cdot",
+    "body": "\\cdot",
+    "description": "LaTeX cdot"
+  },
+  "proportional": {
+    "prefix": [
+      "analog",
+      "proportional"
+    ],
+    "body": "\\propto",
+    "description": "LaTeX proportional"
+  },
+  "infinity": {
+    "prefix": [
+      "infinity",
+      "apeiro"
+    ],
+    "body": "\\infty",
+    "description": "LaTeX infinity"
+  },
+  "latin": {
+    "prefix": "latin",
+    "body": "\\textlatin{${1:text}}",
+    "description": "LaTeX latin"
+  }
+}
