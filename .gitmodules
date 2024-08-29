@@ -2,7 +2,7 @@
 	path = pack/mvim/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter.git
 [submodule "pack/mvim/start/gitsigns.nvim"]
-	path = pack/mvim/start/gitsigns.nvim
+	path = pack/mvim/opt/gitsigns.nvim
 	url = https://github.com/lewis6991/gitsigns.nvim.git
 [submodule "pack/mvim/start/fzf-lua"]
 	path = pack/mvim/start/fzf-lua
@@ -14,7 +14,7 @@
 	path = pack/mvim/opt/nvim-colorizer.lua
 	url = https://github.com/NvChad/nvim-colorizer.lua.git
 [submodule "pack/mvim/start/nvim-lspconfig"]
-	path = pack/mvim/start/nvim-lspconfig
+	path = pack/mvim/opt/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
 [submodule "pack/mvim/start/melange-nvim"]
 	path = pack/mvim/start/melange-nvim
