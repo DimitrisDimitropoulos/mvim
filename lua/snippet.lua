@@ -63,9 +63,9 @@ local function new_server(completion_source)
   local function server(dispatchers)
     local closing = false
     local srv = {}
-    function srv.request(method, params, callback)
+    function srv.request(method, params, handler)
       if method == 'initialize' then
-        callback(nil, {
+        handler(nil, {
           capabilities = {
             completionProvider = {
               triggerCharacters = { '{', '(', '[', ' ', '}', ')', ']' },
@@ -73,9 +73,9 @@ local function new_server(completion_source)
           },
         })
       elseif method == 'textDocument/completion' then
-        callback(nil, completion_source)
+        handler(nil, completion_source)
       elseif method == 'shutdown' then
-        callback(nil, nil)
+        handler(nil, nil)
       end
     end
     function srv.notify(method, _)
@@ -102,7 +102,6 @@ function M.start_mock_lsp(completion_source)
   local dispatchers = {
     on_exit = function(code, signal)
       vim.notify('Server exited with code ' .. code .. ' and signal ' .. signal, vim.log.levels.ERROR)
-      -- print('Server exited with code', code, 'and signal', signal)
     end,
   }
   local client_id = vim.lsp.start({
@@ -111,11 +110,9 @@ function M.start_mock_lsp(completion_source)
     root_dir = vim.loop.cwd(), -- not needed actually
     on_init = function(client)
       vim.notify('Snippet LSP server initialized', vim.log.levels.INFO)
-      -- print 'Mock LSP server initialized'
     end,
     on_exit = function(code, signal)
       vim.notify('Snippet LSP server exited with code ' .. code .. ' and signal ' .. signal, vim.log.levels.ERROR)
-      -- print('Mock LSP server exited with code', code, 'and signal', signal)
     end,
   }, dispatchers)
   return client_id

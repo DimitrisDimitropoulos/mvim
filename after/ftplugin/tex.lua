@@ -158,7 +158,7 @@ vim.keymap.set({ 'i', 's' }, '<A-k>', function()
 end, { silent = true })
 
 -- find the snippets file in the config directory
-local snips_path = vim.fn.expand('$MYVIMRC'):match '(.*[/\\])' .. 'snippets/json_snippets/tex.json'
+local snips_path = vim.fn.expand('$MYVIMRC'):match '(.*[/\\])' .. 'snippets/tex.json'
 -- read it as a string
 local snips = require('snippet').read_file(snips_path)
 -- parse it and format it
