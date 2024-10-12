@@ -13,6 +13,31 @@ function M.read_file(path)
   return buf
 end
 
+---@param pkg_path string
+---@param lang string
+---@return table<string>
+function M.parse_pkg(pkg_path, lang)
+  local pkg = M.read_file(pkg_path)
+  local data = vim.json.decode(pkg)
+  local base_path = vim.fn.fnamemodify(pkg_path, ':h')
+  local file_paths = {}
+  for _, snippet in ipairs(data.contributes.snippets) do
+    local languages = snippet.language
+    -- Check if it's a list of languages or a single language
+    if type(languages) == 'string' then
+      languages = { languages }
+    end
+    -- If a language is provided, check for a match
+    if not lang or vim.tbl_contains(languages, lang) then
+      -- Prepend the base path to the relative snippet path
+      local abs_path = vim.fn.fnamemodify(base_path .. '/' .. snippet.path, ':p')
+      table.insert(file_paths, abs_path)
+    end
+  end
+  return file_paths
+end
+
+---@brief Process only one JSON encoded string
 ---@param snips string: JSON encoded string containing snippets
 ---@param desc string: Description for the snippets (optional)
 ---@return table: A table containing completion results formatted for LSP
@@ -111,9 +136,9 @@ function M.start_mock_lsp(completion_source)
     on_init = function(client)
       vim.notify('Snippet LSP server initialized', vim.log.levels.INFO)
     end,
-    on_exit = function(code, signal)
-      vim.notify('Snippet LSP server exited with code ' .. code .. ' and signal ' .. signal, vim.log.levels.ERROR)
-    end,
+    -- on_exit = function(code, signal)
+    --   vim.notify('Snippet LSP server exited with code ' .. code .. ' and signal ' .. signal, vim.log.levels.ERROR)
+    -- end,
   }, dispatchers)
   return client_id
 end
