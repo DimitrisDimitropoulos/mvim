@@ -10,9 +10,6 @@
 [submodule "pack/mvim/start/mini.splitjoin"]
 	path = pack/mvim/start/mini.splitjoin
 	url = https://github.com/echasnovski/mini.splitjoin.git
-[submodule "pack/mvim/opt/nvim-colorizer.lua"]
-	path = pack/mvim/opt/nvim-colorizer.lua
-	url = https://github.com/NvChad/nvim-colorizer.lua.git
 [submodule "pack/mvim/start/nvim-lspconfig"]
 	path = pack/mvim/opt/nvim-lspconfig
 	url = https://github.com/neovim/nvim-lspconfig.git
