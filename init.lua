@@ -5,7 +5,6 @@ require 'lsp'
 
 vim.cmd [[colorscheme melange]]
 require 'statusline'
-require('nvim-treesitter.configs').setup {}
 
 require 'plugins.fzf'
 require('nvim-treesitter.configs').setup {
